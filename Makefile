@@ -6,7 +6,7 @@
 #    By: wangping <wangping@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/11 17:26:22 by wxuerui           #+#    #+#              #
-#    Updated: 2022/09/19 11:38:10 by wxuerui          ###   ########.fr        #
+#    Updated: 2022/09/19 21:48:27 by wangping         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,8 @@ RESET = \033[0m
 
 #sources
 
-SRC_FILES	= 
+SRC_FILES	= fdf_colors fdf_draw fdf_hooks fdf_init fdf_main \
+			  fdf_projection fdf_transformations \
 
 SRCS	= $(addprefix $(SRCS_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJS	= $(addprefix $(OBJS_DIR), $(addsuffix .o, $(SRC_FILES)))
@@ -82,8 +83,9 @@ fclean:	clean
 
 re:	fclean all
 
-f:
-		@rm -f $(NAME)
-		@echo "$(BLUE)$(NAME): $(MAGENTA)$(NAME) was deleted$(RESET)"
+r:
+	rm -rf $(OBJS_DIR)
+	rm -f $(NAME)
+	make all
 
 .PHONY:	all $(NAME) fclean ffclean clean re
