@@ -6,7 +6,7 @@
 /*   By: wangping <wangping@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 11:45:14 by wxuerui           #+#    #+#             */
-/*   Updated: 2022/09/20 12:00:31 by wangping         ###   ########.fr       */
+/*   Updated: 2022/09/20 12:20:51 by wangping         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,11 +91,11 @@ void	fdf_draw(t_fdf *fdf)
 		while (++x < fdf->map->width)
 		{
 			if (x != fdf->map->width - 1)
-				draw_line(fdf, project(new_point(x, y, fdf->map), fdf),
-					project(new_point(x + 1, y, fdf->map), fdf));
+				draw_line(fdf, project(new_point(x, y, fdf), fdf),
+					project(new_point(x + 1, y, fdf), fdf));
 			if (y != fdf->map->height - 1)
-				draw_line(fdf, project(new_point(x, y, fdf->map), fdf),
-					project(new_point(x, y + 1, fdf->map), fdf));
+				draw_line(fdf, project(new_point(x, y, fdf), fdf),
+					project(new_point(x, y + 1, fdf), fdf));
 		}
 	}
 	mlx_put_image_to_window(fdf->mlx, fdf->win, fdf->img, 0, 0);

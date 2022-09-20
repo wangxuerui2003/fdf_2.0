@@ -6,7 +6,7 @@
 /*   By: wangping <wangping@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 21:35:57 by wxuerui           #+#    #+#             */
-/*   Updated: 2022/09/20 11:51:02 by wangping         ###   ########.fr       */
+/*   Updated: 2022/09/20 12:19:13 by wangping         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ static void	isometric_projection(t_point *p)
 	p->y = (x + y) * sin(M_PI / 6) - p->z;
 }
 
-t_point	new_point(int x, int y, t_map *map)
+t_point	new_point(int x, int y, t_fdf *fdf)
 {
 	t_point	point;
 
 	point.x = x;
 	point.y = y;
-	point.z = map->coords[y * map->width + x];
-	point.color = get_point_color(point, map);
+	point.z = fdf->map->coords[y * fdf->map->width + x];
+	point.color = get_point_color(point, fdf->map, fdf->view);
 	return (point);
 }
 

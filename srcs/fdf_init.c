@@ -6,7 +6,7 @@
 /*   By: wangping <wangping@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 11:45:26 by wxuerui           #+#    #+#             */
-/*   Updated: 2022/09/20 11:47:33 by wangping         ###   ########.fr       */
+/*   Updated: 2022/09/20 12:16:29 by wangping         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ static t_view	*view_init(t_map *map)
 	if (view == NULL)
 		fdf_err_exit(ERR_FDF_INIT);
 	view->mode = TWO_D;
+	view->colorscheme = DEFAULT;
 	view->zoom = fmin((WIDTH - MENU_SIZE) / map->width / 2,
 			(HEIGHT - MENU_SIZE) / map->height / 2);
 	view->angle_x = 0;

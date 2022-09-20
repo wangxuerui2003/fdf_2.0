@@ -6,7 +6,7 @@
 /*   By: wangping <wangping@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 11:45:21 by wxuerui           #+#    #+#             */
-/*   Updated: 2022/09/20 11:50:28 by wangping         ###   ########.fr       */
+/*   Updated: 2022/09/20 12:21:32 by wangping         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,13 @@ static int	key_press(int key, t_fdf *fdf)
 			fdf->view->mode++;
 		else
 			fdf->view->mode--;
+	}
+	else if (key == MAIN_PAD_C)
+	{
+		if (fdf->view->colorscheme == DARK)
+			fdf->view->colorscheme -= 2;
+		else
+			fdf->view->colorscheme++;
 	}
 	fdf_draw(fdf);
 	return (0);

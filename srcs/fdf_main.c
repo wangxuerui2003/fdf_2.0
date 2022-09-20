@@ -6,7 +6,7 @@
 /*   By: wangping <wangping@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 11:44:37 by wxuerui           #+#    #+#             */
-/*   Updated: 2022/09/20 11:59:51 by wangping         ###   ########.fr       */
+/*   Updated: 2022/09/20 12:11:31 by wangping         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void	fdf_print_manual(t_fdf *fdf)
 	mlx_string_put(mlx, win, 37, 120, TEXT_COLOR, "X-Axis - 2/8");
 	mlx_string_put(mlx, win, 37, 140, TEXT_COLOR, "Y-Axis - 4/6");
 	mlx_string_put(mlx, win, 37, 160, TEXT_COLOR, "Z-Axis - 3/7");
+	mlx_string_put(mlx, win, 15, 180, TEXT_COLOR, "Change Colorscheme: C");
 }
 
 int	main(int ac, char **av)

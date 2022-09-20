@@ -6,7 +6,7 @@
 /*   By: wangping <wangping@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 11:44:13 by wxuerui           #+#    #+#             */
-/*   Updated: 2022/09/19 22:24:40 by wangping         ###   ########.fr       */
+/*   Updated: 2022/09/20 12:12:34 by wangping         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@
 # define MAIN_PAD_ESC		53
 # define MAIN_PAD_Q			12
 # define MAIN_PAD_M			46
+# define MAIN_PAD_C			8
 # define MAIN_PAD_0			29
 # define MAIN_PAD_1			18
 # define MAIN_PAD_2			19
