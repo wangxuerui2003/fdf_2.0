@@ -2,8 +2,11 @@
 
 ## 3D rendering of a map
 
-**Screenshot of the project**
-![example](assets/example.png)
+### Screenshot of the project
+![example_img](assets/example.png)
+
+### Video of the project
+![example_video](assets/video.mov)
 
 ### RTFM
 
