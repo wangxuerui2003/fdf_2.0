@@ -6,7 +6,7 @@
 /*   By: wangping <wangping@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 11:45:21 by wxuerui           #+#    #+#             */
-/*   Updated: 2022/09/20 12:21:32 by wangping         ###   ########.fr       */
+/*   Updated: 2022/09/20 14:57:32 by wangping         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ static void	rotate(int key, t_fdf *fdf)
 	else if (key == MAIN_PAD_8)
 		fdf->view->angle_x -= 0.1;
 	else if (key == MAIN_PAD_4)
-		fdf->view->angle_y -= 0.1;
-	else if (key == MAIN_PAD_6)
 		fdf->view->angle_y += 0.1;
+	else if (key == MAIN_PAD_6)
+		fdf->view->angle_y -= 0.1;
 	else if (key == MAIN_PAD_3)
 		fdf->view->angle_z += 0.1;
 	else if (key == MAIN_PAD_7)

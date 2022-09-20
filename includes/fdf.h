@@ -6,7 +6,7 @@
 /*   By: wangping <wangping@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 11:44:03 by wxuerui           #+#    #+#             */
-/*   Updated: 2022/09/20 12:18:47 by wangping         ###   ########.fr       */
+/*   Updated: 2022/09/20 14:47:50 by wangping         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,9 +91,9 @@ void	fdf_draw(t_fdf *fdf);
 t_point	new_point(int x, int y, t_fdf *fdf);
 t_point	project(t_point p, t_fdf *fdf);
 int		close_win(t_fdf *fdf);
-void	rotate_x(int *y, int *z, double alpha);
-void	rotate_y(int *x, int *z, double beta);
-void	rotate_z(int *x, int *y, double gamma);
+void	rotate_x(int *y, int *z, double angle_x);
+void	rotate_y(int *x, int *z, double angle_y);
+void	rotate_z(int *x, int *y, double angle_z);
 int		get_point_color(t_point p, t_map *map, t_view *view);
 int		get_color(t_point current, t_point start, t_point end, t_point delta);
 
