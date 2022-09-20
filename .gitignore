@@ -1,3 +1,6 @@
 objs/
 .vscode/
-
+libft.a
+*.o
+fdf
+libmlx.a
