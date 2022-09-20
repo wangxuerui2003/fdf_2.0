@@ -6,7 +6,7 @@
 /*   By: wangping <wangping@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 11:45:21 by wxuerui           #+#    #+#             */
-/*   Updated: 2022/09/20 14:57:32 by wangping         ###   ########.fr       */
+/*   Updated: 2022/09/20 15:40:50 by wangping         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	zoom(int key, t_fdf *fdf)
 	if (key == MAIN_PAD_PLUS)
 		fdf->view->zoom++;
 	if (key == MAIN_PAD_MINUS)
-		if (fdf->view->zoom > 1)
+		if (fdf->view->zoom > 2)
 			fdf->view->zoom--;
 }
 
