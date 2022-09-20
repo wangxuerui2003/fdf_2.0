@@ -6,7 +6,7 @@
 /*   By: wangping <wangping@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 11:45:26 by wxuerui           #+#    #+#             */
-/*   Updated: 2022/09/19 22:46:17 by wangping         ###   ########.fr       */
+/*   Updated: 2022/09/20 11:47:33 by wangping         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ static void	get_map_size(t_map *map, int fd)
 	char	**row;
 	int		width;
 
+	map->height = 0;
+	map->width = 0;
 	line = get_next_line(fd);
 	while (line != NULL && ++map->height)
 	{
@@ -34,6 +36,7 @@ static void	get_map_size(t_map *map, int fd)
 		ft_free2darr((void **)row);
 		line = get_next_line(fd);
 	}
+	close(fd);
 }
 
 static void	read_map(t_map *map, int fd)
@@ -60,7 +63,8 @@ static void	read_map(t_map *map, int fd)
 			free(line);
 			break ;
 		}
-	}	
+	}
+	close(fd);
 }
 
 static t_view	*view_init(t_map *map)
@@ -93,13 +97,9 @@ static t_map	*map_init(char *map_file)
 	map = malloc(sizeof(t_map));
 	if (map == NULL)
 		fdf_err_exit(ERR_MAP_INIT);
-	map->height = 0;
-	map->width = 0;
 	get_map_size(map, fd);
-	close(fd);
 	fd = open(map_file, O_RDONLY);
 	read_map(map, fd);
-	close(fd);
 	i = 0;
 	map->min = map->coords[0];
 	map->max = map->coords[0];

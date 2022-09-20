@@ -6,7 +6,7 @@
 /*   By: wangping <wangping@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 11:44:03 by wxuerui           #+#    #+#             */
-/*   Updated: 2022/09/19 22:42:37 by wangping         ###   ########.fr       */
+/*   Updated: 2022/09/20 12:00:11 by wangping         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,6 @@ void	rotate_x(int *y, int *z, double alpha);
 void	rotate_y(int *x, int *z, double beta);
 void	rotate_z(int *x, int *y, double gamma);
 int		get_point_color(t_point p, t_map *map);
-int	get_color(t_point current, t_point start, t_point end, t_point delta);
+int		get_color(t_point current, t_point start, t_point end, t_point delta);
 
 #endif	/*fdf.h*/

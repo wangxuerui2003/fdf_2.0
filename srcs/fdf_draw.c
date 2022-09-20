@@ -6,7 +6,7 @@
 /*   By: wangping <wangping@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 11:45:14 by wxuerui           #+#    #+#             */
-/*   Updated: 2022/09/19 22:41:24 by wangping         ###   ########.fr       */
+/*   Updated: 2022/09/20 12:00:31 by wangping         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,33 +42,39 @@ static void	draw_pixel(t_fdf *fdf, int x, int y, int color)
 	}
 }
 
+static void	adjust_errors(t_point *delta, t_point *temp,
+	t_point *direction, int error[2])
+{
+	error[1] = error[0] * 2;
+	if (error[1] > -abs(delta->y))
+	{
+		error[0] -= abs(delta->y);
+		temp->x += direction->x;
+	}
+	if (error[1] < abs(delta->x))
+	{
+		error[0] += abs(delta->x);
+		temp->y += direction->y;
+	}	
+}
+
 static void	draw_line(t_fdf *fdf, t_point p1, t_point p2)
 {
 	t_point	delta;
 	t_point	direction;
-	t_point	current;
+	t_point	temp;
 	int		error[2];
 
-	current = p1;
+	temp = p1;
 	delta.x = p1.x - p2.x;
 	delta.y = p1.y - p2.y;
 	direction.x = -1 + (2 * (delta.x < 0));
 	direction.y = -1 + (2 * (delta.y < 0));
 	error[0] = abs(delta.x) - abs(delta.y);
-	while ((p1.x > 0 && p2.x > 0) && (current.x != p2.x || current.y != p2.y))
+	while ((p1.x > 0 && p2.x > 0) && (temp.x != p2.x || temp.y != p2.y))
 	{
-		draw_pixel(fdf, current.x, current.y, get_color(current, p1, p2, delta));
-		error[1] = error[0] * 2;
-		if (error[1] > -abs(delta.y))
-		{
-			error[0] -= abs(delta.y);
-			current.x += direction.x;
-		}
-		if (error[1] < abs(delta.x))
-		{
-			error[0] += abs(delta.x);
-			current.y += direction.y;
-		}
+		draw_pixel(fdf, temp.x, temp.y, get_color(temp, p1, p2, delta));
+		adjust_errors(&delta, &temp, &direction, error);
 	}
 }
 

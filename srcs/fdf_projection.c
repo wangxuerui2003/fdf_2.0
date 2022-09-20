@@ -6,7 +6,7 @@
 /*   By: wangping <wangping@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 21:35:57 by wxuerui           #+#    #+#             */
-/*   Updated: 2022/09/19 22:15:34 by wangping         ###   ########.fr       */
+/*   Updated: 2022/09/20 11:51:02 by wangping         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,13 @@ t_point	project(t_point p, t_fdf *fdf)
 	p.z *= fdf->view->zoom / 2;
 	p.x -= (fdf->map->width * fdf->view->zoom) / 2;
 	p.y -= (fdf->map->height * fdf->view->zoom) / 2;
-	rotate_x(&p.y, &p.z, fdf->view->angle_x);
-	rotate_y(&p.x, &p.z, fdf->view->angle_y);
-	rotate_z(&p.x, &p.y, fdf->view->angle_z);
 	if (fdf->view->mode == THREE_D)
+	{
+		rotate_x(&p.y, &p.z, fdf->view->angle_x);
+		rotate_y(&p.x, &p.z, fdf->view->angle_y);
+		rotate_z(&p.x, &p.y, fdf->view->angle_z);
 		isometric_projection(&p);
+	}
 	p.x += (WIDTH - MENU_SIZE) / 2;
 	p.y += (HEIGHT + fdf->map->height * fdf->view->zoom) / 2;
 	p.x += fdf->view->move_x;

@@ -6,7 +6,7 @@
 /*   By: wangping <wangping@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 11:45:21 by wxuerui           #+#    #+#             */
-/*   Updated: 2022/09/19 22:27:35 by wangping         ###   ########.fr       */
+/*   Updated: 2022/09/20 11:50:28 by wangping         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ static void	move(int key, t_fdf *fdf)
 
 static void	rotate(int key, t_fdf *fdf)
 {
-	printf("rotate\n");
 	if (key == MAIN_PAD_2)
 		fdf->view->angle_x += 0.1;
 	else if (key == MAIN_PAD_8)
