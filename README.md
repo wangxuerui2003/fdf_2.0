@@ -11,8 +11,8 @@
 ### RTFM
 
 ```bash
-	make
+	$ make
 
-	./fdf map_file' (choose a map in the maps/ folder)
+	$ ./fdf map_file' (choose a map from the maps/ folder)
 ```
 
