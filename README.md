@@ -5,8 +5,8 @@
 ### Screenshot of the project
 ![example_img](assets/example.png)
 
-### Video of the project
-![example_video](assets/video.mov)
+### GIF of the project
+![example_gif](assets/example_gif.gif)
 
 ### RTFM
 

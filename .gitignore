@@ -1,5 +1,6 @@
 objs/
 .vscode/
+.DS_Store
 libft.a
 *.o
 fdf
