@@ -5,8 +5,9 @@
 **Screenshot of the project**
 ![example](assets/example.png)
 
-###RTFM
-```
+### RTFM
+
+```bash
 	make
 
 	./fdf map_file' (choose a map in the maps/ folder)
