@@ -6,7 +6,7 @@
 #    By: wxuerui <wxuerui@student.42kl.edu.my>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/20 18:55:11 by wxuerui           #+#    #+#              #
-#    Updated: 2022/09/20 19:07:24 by wxuerui          ###   ########.fr        #
+#    Updated: 2022/09/22 14:53:19 by wxuerui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 NAME		=	fdf
 CC			=	gcc
 HEADER		=	-I$(LIBFT_DIR)$(SRCS_DIR) -I$(INCLUDE_DIR) -I$(MLX_DIR)
-CFLAGS		=	-Wall -Wextra -Werror $(HEADER)
+CFLAGS		=	-Wall -Wextra -Werror $(HEADER) #-fsanitize=address -g
 LIBFTFLAGS	=	-L$(LIBFT_DIR) -lft
 MLXFLAGS	=	-L$(MLX_DIR) -lmlx -framework OpenGL -framework Appkit
 MATHFLAGS	=	-lm
