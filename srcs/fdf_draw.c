@@ -6,7 +6,7 @@
 /*   By: wangping <wangping@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 11:45:14 by wxuerui           #+#    #+#             */
-/*   Updated: 2022/09/20 12:20:51 by wangping         ###   ########.fr       */
+/*   Updated: 2022/09/22 14:51:18 by wxuerui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ static void	draw_pixel(t_fdf *fdf, int x, int y, int color)
 {
 	int		i;
 
+	if (x < 0 || y < 0)
+		return ;
 	if ((x >= MENU_SIZE || y >= MENU_SIZE) && x < WIDTH && y < HEIGHT)
 	{
 		i = (x * fdf->bits_per_pixel / 8) + (y * fdf->size_line);
